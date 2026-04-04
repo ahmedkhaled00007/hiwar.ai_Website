@@ -22,7 +22,6 @@
         <li><a href="#demo">Demo</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#docs">Documentation</a></li>
-        <li><a href="#howto">How to Run</a></li>
         <li><a href="#next">What's Next</a></li>
       </ul>
       <button class="nav-hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
@@ -44,11 +43,6 @@
       <div class="hero-cta">
         <a href="#demo" class="btn btn-primary">Watch Demo</a>
         <a href="#docs" class="btn btn-outline">Documentation</a>
-        <a href="https://github.com/hiwar-ai/Closer" class="btn btn-ghost" target="_blank">
-          <!-- GitHub Icon -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-          GitHub
-        </a>
       </div>
     </div>
     <div class="hero-scroll-hint">
@@ -329,94 +323,7 @@
     </div>
   </section>
 
-  <!-- ─── How to Run ─────────────────────────────────────────────── -->
-  <section id="howto" class="section section-dark">
-    <div class="container">
-      <div class="section-label">Get Started</div>
-      <h2 class="section-title">How to Run the Project</h2>
 
-      <div class="steps">
-
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-content">
-            <h3>Clone the Repository</h3>
-            <pre><code>git clone https://github.com/hiwar-ai/Closer.git
-cd Closer</code></pre>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-content">
-            <h3>Install Dependencies</h3>
-            <pre><code># System libraries
-sudo apt update && sudo apt install -y python3-pip espeak libportaudio2
-
-# Hardware & AI libraries
-pip3 install torch mediapipe numpy opencv-python-headless
-pip3 install sounddevice soundfile requests RPLCD smbus2 gpiozero</code></pre>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-content">
-            <h3>Train the Model (or Use the Pre-trained One)</h3>
-            <pre><code># Train from scratch (optional — pre-trained model is included):
-python training/train.py
-
-# Evaluate accuracy:
-python training/evaluate.py</code></pre>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-num">04</div>
-          <div class="step-content">
-            <h3>Launch the Unified System</h3>
-            <pre><code># Main entry point — opens the mode-selection launcher:
-python launcher.py
-
-# Choose your Closer mode:
-#   🤟  Sign Language  — starts GestureNet server + camera + dashboard
-#   🎤  Speech → LCD   — starts Whisper server + LCD simulator
-
-# (Legacy: run a single mode directly)
-python main.py                     # Sign Language only
-python server_speech/main.py      # Speech only
-</code></pre>
-            <p class="step-note">The unified launcher manages both subsystems, handles port conflicts automatically, and lets you switch modes without restarting.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-num">05</div>
-          <div class="step-content">
-            <h3>Deploy to Raspberry Pi (Standalone)</h3>
-            <pre><code># For Pi 5 (Sign Recognition):
-python3 deploy_pi5/pi_vision_node.py --button
-
-# For Pi Zero (Speech Translator):
-SERVER_URL=https://... python3 deploy_pizero/pi_zero_voice_client.py</code></pre>
-            <p class="step-note">No server connection needed for Pi 5. Pi Zero connects to the cloud transcription service.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-num">06</div>
-          <div class="step-content">
-            <h3>Customize Gesture Labels (Dashboard)</h3>
-            <pre><code># The dashboard opens automatically with main.py
-# Or run it standalone:
-python config/dashboard.py</code></pre>
-            <p class="step-note">Edit the text label for each of the 20 signs and click <strong>SAVE</strong>. Changes apply instantly without restarting.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- ─── What's Next ────────────────────────────────────────────── -->
   <section id="next" class="section">
@@ -509,8 +416,6 @@ python config/dashboard.py</code></pre>
       <div class="footer-links">
         <a href="#about">About</a>
         <a href="#docs">Docs</a>
-        <a href="#howto">Run</a>
-        <a href="https://github.com/hiwar-ai/Closer" target="_blank">GitHub</a>
       </div>
     </div>
   </footer>
